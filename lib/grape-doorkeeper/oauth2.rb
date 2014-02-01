@@ -60,7 +60,7 @@ module GrapeDoorkeeper
   module OAuth2
     def doorkeeper_for *args
       doorkeeper_for = Doorkeeper::DoorkeeperForBuilder.create_doorkeeper_for(*args)
-      use GrapeDoorkeeper::Middleware, doorkeeper: doorkeeper_for
+      use GrapeDoorkeeper::Middleware, doorkeeper: doorkeeper_for, parameter: %w(bearer_token oauth_token access_token)
     end
   end
     
